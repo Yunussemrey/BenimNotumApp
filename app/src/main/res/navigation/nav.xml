@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/anaSayfaFragment">
+
+    <fragment
+        android:id="@+id/anaSayfaFragment"
+        android:name="com.yunusemre.notapp.ui.fragment.AnaSayfaFragment"
+        android:label="fragment_ana_sayfa"
+        tools:layout="@layout/fragment_ana_sayfa" >
+        <action
+            android:id="@+id/notKayitGecis"
+            app:destination="@id/notKayitFragment" />
+        <action
+            android:id="@+id/notGuncelleGecis"
+            app:destination="@id/notGuncelleFragment" />
+        <action
+            android:id="@+id/ayarGecis"
+            app:destination="@id/ayarlarFragment" />
+        <action
+            android:id="@+id/notOkumaGecis"
+            app:destination="@id/notOkumaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notGuncelleFragment"
+        android:name="com.yunusemre.notapp.ui.fragment.NotGuncelleFragment"
+        android:label="fragment_not_guncelle"
+        tools:layout="@layout/fragment_not_guncelle" >
+        <argument
+            android:name="Notlar"
+            app:argType="com.yunusemre.notapp.data.entity.Notlar" />
+        <action
+            android:id="@+id/guncelleToAnasayfa"
+            app:destination="@id/anaSayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notKayitFragment"
+        android:name="com.yunusemre.notapp.ui.fragment.NotKayitFragment"
+        android:label="fragment_not_kayit"
+        tools:layout="@layout/fragment_not_kayit" >
+        <action
+            android:id="@+id/kayitToAnasayfa"
+            app:destination="@id/anaSayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ayarlarFragment"
+        android:name="com.yunusemre.notapp.ui.fragment.AyarlarFragment"
+        android:label="fragment_ayarlar"
+        tools:layout="@layout/fragment_ayarlar" >
+        <action
+            android:id="@+id/hakkimdaGecis"
+            app:destination="@id/hakkimdaFragment" />
+        <action
+            android:id="@+id/yaziRenkGecis"
+            app:destination="@id/yaziRenkFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notOkumaFragment"
+        android:name="com.yunusemre.notapp.ui.fragment.NotOkumaFragment"
+        android:label="fragment_not_okuma"
+        tools:layout="@layout/fragment_not_okuma" >
+        <argument
+            android:name="notOkuma"
+            app:argType="com.yunusemre.notapp.data.entity.Notlar" />
+        <action
+            android:id="@+id/okumaGuncelleGidis"
+            app:destination="@id/notGuncelleFragment" />
+        <action
+            android:id="@+id/okumaToAnasayfa"
+            app:destination="@id/anaSayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hakkimdaFragment"
+        android:name="com.yunusemre.notapp.ui.fragment.HakkimdaFragment"
+        android:label="fragment_hakkimda"
+        tools:layout="@layout/fragment_hakkimda" />
+    <fragment
+        android:id="@+id/yaziRenkFragment"
+        android:name="com.yunusemre.notapp.ui.fragment.YaziRenkFragment"
+        android:label="fragment_yazi_renk"
+        tools:layout="@layout/fragment_yazi_renk" >
+        <action
+            android:id="@+id/action_yaziRenkFragment_self"
+            app:destination="@id/yaziRenkFragment" />
+    </fragment>
+</navigation>

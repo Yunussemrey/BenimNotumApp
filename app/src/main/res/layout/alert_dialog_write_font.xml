@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/zemin"
+        android:padding="30dp">
+
+
+        <TextView
+            android:id="@+id/btnFont1"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:fontFamily="@font/acme"
+            android:padding="10dp"
+            android:text="Bu örnek bir metindir."
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/btnFont2"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border"
+            android:fontFamily="@font/akaya_telivigala"
+            android:padding="5dp"
+            android:text="Bu örnek bir metindir."
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/btnFont1"
+            app:layout_constraintStart_toStartOf="@+id/btnFont1"
+            app:layout_constraintTop_toBottomOf="@+id/btnFont1">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/btnFont3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border"
+            android:fontFamily="@font/abhaya_libre"
+            android:padding="10dp"
+            android:text="Bu örnek bir metindir."
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/btnFont2"
+            app:layout_constraintStart_toStartOf="@+id/btnFont2"
+            app:layout_constraintTop_toBottomOf="@+id/btnFont2">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/btnFont4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border"
+            android:fontFamily="@font/aclonica"
+            android:padding="10dp"
+            android:text="Bu örnek bir metindir."
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/btnFont3"
+            app:layout_constraintStart_toStartOf="@+id/btnFont3"
+            app:layout_constraintTop_toBottomOf="@+id/btnFont3">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/btnFont5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border"
+            android:fontFamily="@font/abeezee"
+            android:padding="10dp"
+            android:text="Bu örnek bir metindir."
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/btnFont4"
+            app:layout_constraintStart_toStartOf="@+id/btnFont4"
+            app:layout_constraintTop_toBottomOf="@+id/btnFont4">
+
+        </TextView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

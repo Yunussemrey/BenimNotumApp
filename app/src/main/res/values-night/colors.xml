@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="zemin">#0388A6</color>
+    <color name="toolbar">#102940</color>
+    <color name="notKarti">#3F3F40</color>
+    <color name="yazi">#9CCED9</color>
+    <color name="kaydet">#8C6645</color>
+    <color name="veriYazıları">#FFFFFFFF</color>
+</resources>
