@@ -32,6 +32,7 @@ import com.yunusemre.notapp.databinding.FragmentNotKayitBinding;
 import com.yunusemre.notapp.ui.viewmodel.NotKayitViewModel;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
@@ -45,6 +46,7 @@ public class NotKayitFragment extends Fragment {
 
     private NotKayitViewModel viewModel;
     SharedPreferences sp;
+    SharedPreferences.Editor editor;
     private AdView banner2;
     String not_baslik;
     String not_icerik;
@@ -56,7 +58,7 @@ public class NotKayitFragment extends Fragment {
 
             //shared preferences tanımlama
             sp = requireActivity().getSharedPreferences("Tarih", Context.MODE_PRIVATE);
-
+            editor = sp.edit();
         MobileAds.initialize(requireContext(), new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
@@ -72,9 +74,9 @@ public class NotKayitFragment extends Fragment {
 
 
 
+                String tarih = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
-
-
+                binding.textTarih.setText(tarih);
 
 
 
@@ -88,6 +90,8 @@ public class NotKayitFragment extends Fragment {
                         viewModel.kaydet(not_baslik,not_icerik);
                         Navigation.findNavController(v).navigate(R.id.kayitToAnasayfa);
                     }
+                    editor.putString("tarih",tarih);
+                    editor.apply();
 
 
             });

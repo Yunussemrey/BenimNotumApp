@@ -131,5 +131,16 @@
 
     </ScrollView>
 
+    <TextView
+        android:id="@+id/textTarih"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/zemin"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
