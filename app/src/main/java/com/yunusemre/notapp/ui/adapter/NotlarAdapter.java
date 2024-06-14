@@ -80,6 +80,7 @@ public class NotlarAdapter extends RecyclerView.Adapter<NotlarAdapter.CardTasari
         CardTasarimBinding t = holder.tasarimBinding;
         t.textView4.setText(notlar.getNot_baslik());
         t.textViewNot.setText(notlar.getNot_icerik());
+       // t.textTarih.setText(notlar.getTarih()); // tarih
         t.textView4.setTextColor(Color.parseColor(renk));
         t.textViewNot.setTextColor(Color.parseColor(renk2));
         t.textView4.setTypeface(typeface);

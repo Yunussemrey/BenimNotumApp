@@ -46,10 +46,9 @@ public class NotOkumaFragment extends Fragment {
    private AdView banner3;
    SharedPreferences sp;
    SharedPreferences sp2;
-   SharedPreferences sp3;
    SharedPreferences.Editor editor;
    SharedPreferences.Editor editor2;
-   SharedPreferences.Editor editor3;
+
    Typeface typeface;
    Typeface typeface2;
 
@@ -60,10 +59,9 @@ public class NotOkumaFragment extends Fragment {
 
                 sp = requireActivity().getSharedPreferences("Renk", Context.MODE_PRIVATE);
                 sp2 = requireActivity().getSharedPreferences("font",Context.MODE_PRIVATE);
-                sp3 = requireActivity().getSharedPreferences("Tarih",Context.MODE_PRIVATE);
                 editor = sp.edit();
                 editor2 = sp2.edit();
-                editor3 = sp3.edit();
+
                 String renk = sp.getString("renk", "#000000"); // başlık kaydolan rengi getir
                 String renk2 = sp.getString("renk2","#000000"); // not kaydolan içeriği getir
 
@@ -72,8 +70,6 @@ public class NotOkumaFragment extends Fragment {
                 int font2 = sp2.getInt("font2",R.font.abeezee);
 
 
-                String gelenTarih = sp3.getString("tarih"," ");
-                binding.textViewTarih.setText(gelenTarih);
 
 
                 NotOkumaFragmentArgs bundle = NotOkumaFragmentArgs.fromBundle(getArguments());
@@ -81,7 +77,7 @@ public class NotOkumaFragment extends Fragment {
 
                 binding.baslikOku.setText(okunanNot.getNot_baslik().toUpperCase());
                 binding.notOku.setText(okunanNot.getNot_icerik());
-
+                binding.textViewTarih.setText(okunanNot.getTarih());
 
 
                 // başlık renklerini göster

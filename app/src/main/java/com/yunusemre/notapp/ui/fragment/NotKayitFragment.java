@@ -45,20 +45,18 @@ public class NotKayitFragment extends Fragment {
     private FragmentNotKayitBinding binding;
 
     private NotKayitViewModel viewModel;
-    SharedPreferences sp;
-    SharedPreferences.Editor editor;
     private AdView banner2;
     String not_baslik;
     String not_icerik;
+    String not_tarih;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
             binding = FragmentNotKayitBinding.inflate(inflater,container,false);
 
-            //shared preferences tanımlama
-            sp = requireActivity().getSharedPreferences("Tarih", Context.MODE_PRIVATE);
-            editor = sp.edit();
+
+
         MobileAds.initialize(requireContext(), new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
@@ -74,24 +72,23 @@ public class NotKayitFragment extends Fragment {
 
 
 
-                String tarih = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
-
-                binding.textTarih.setText(tarih);
 
 
 
+        String tarih = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        binding.textTarih.setText(tarih);
 
             binding.buttonSave.setOnClickListener(v -> {
-                 not_baslik = binding.editTextBaslik.getText().toString();
+                 not_baslik = binding.editTextBaslik.getText().toString().toUpperCase();
                  not_icerik = binding.editTextNot.getText().toString();
+                 not_tarih = binding.textTarih.getText().toString();
                     if (not_baslik.isEmpty()){
                         Snackbar.make(v,"Lütfen bir başlık giriniz",Snackbar.LENGTH_LONG).show();
                     }else {
-                        viewModel.kaydet(not_baslik,not_icerik);
+                        viewModel.kaydet(not_baslik,not_icerik,not_tarih);
                         Navigation.findNavController(v).navigate(R.id.kayitToAnasayfa);
                     }
-                    editor.putString("tarih",tarih);
-                    editor.apply();
+
 
 
             });
@@ -108,5 +105,11 @@ public class NotKayitFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         viewModel = new ViewModelProvider(this).get(NotKayitViewModel.class);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
     }
 }

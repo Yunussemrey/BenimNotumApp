@@ -18,7 +18,7 @@ public class NotKayitViewModel extends ViewModel {
     public NotKayitViewModel(NotlarDaoRepository notDao){
         this.notDao = notDao;
     }
-    public void kaydet (String baslik,String icerik){
-       notDao.kaydet(baslik,icerik);
+    public void kaydet (String baslik,String icerik,String tarih){
+       notDao.kaydet(baslik,icerik,tarih);
     }
 }

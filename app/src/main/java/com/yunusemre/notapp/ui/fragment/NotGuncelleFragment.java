@@ -30,6 +30,10 @@ import com.yunusemre.notapp.databinding.FragmentNotGuncelleBinding;
 import com.yunusemre.notapp.data.entity.Notlar;
 import com.yunusemre.notapp.ui.viewmodel.NotGuncelleViewModel;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
@@ -40,6 +44,7 @@ public class NotGuncelleFragment extends Fragment {
    private AdView banner4;
    String  not_baslik;
    String not_icerik;
+   String not_tarih;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,12 +58,13 @@ public class NotGuncelleFragment extends Fragment {
             binding.editTextBaslikGuncel.setText(gelenNot.getNot_baslik());
             binding.editTextNotGuncel.setText(gelenNot.getNot_icerik());
 
-
+        String tarih = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        binding.tarihText.setText(tarih);
         binding.buttonGuncelle.setOnClickListener(v -> {
              not_baslik = binding.editTextBaslikGuncel.getText().toString();
              not_icerik = binding.editTextNotGuncel.getText().toString();
-
-            viewModel.guncelle(gelenNot.getNot_id(),not_baslik,not_icerik);
+             not_tarih = binding.tarihText.getText().toString();
+            viewModel.guncelle(gelenNot.getNot_id(),not_baslik,not_icerik,not_tarih);
            Navigation.findNavController(v).navigate(R.id.guncelleToAnasayfa);
 
         });
@@ -82,5 +88,11 @@ public class NotGuncelleFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         viewModel = new ViewModelProvider(this).get(NotGuncelleViewModel.class);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
     }
 }

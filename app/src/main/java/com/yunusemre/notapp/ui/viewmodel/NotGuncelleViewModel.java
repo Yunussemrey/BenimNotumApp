@@ -17,8 +17,8 @@ public class NotGuncelleViewModel extends ViewModel {
         public NotGuncelleViewModel(NotlarDaoRepository notDao){
             this.notDao = notDao;
         }
-    public void guncelle(int id,String baslik,String icerik){
-        notDao.guncelle(id,baslik,icerik);
+    public void guncelle(int id,String baslik,String icerik,String tarih){
+        notDao.guncelle(id,baslik,icerik,tarih);
 
     }
 }

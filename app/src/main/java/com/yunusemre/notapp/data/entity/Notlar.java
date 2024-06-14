@@ -18,15 +18,19 @@ public class Notlar implements Serializable {
     @ColumnInfo(name = "not_icerik")
     @NonNull
     private String not_icerik;
+    @ColumnInfo(name = "tarih")
+    @NonNull
+    private String tarih;
 
 
     public Notlar() {
     }
 
-    public Notlar(int not_id, String not_baslik, String not_icerik) {
+    public Notlar(int not_id, String not_baslik, String not_icerik, String tarih) {
         this.not_id = not_id;
         this.not_baslik = not_baslik;
         this.not_icerik = not_icerik;
+        this.tarih = tarih;
     }
 
     public int getNot_id() {
@@ -51,5 +55,14 @@ public class Notlar implements Serializable {
 
     public void setNot_icerik(String not_icerik) {
         this.not_icerik = not_icerik;
+    }
+
+
+    public String getTarih() {
+        return tarih;
+    }
+
+    public void setTarih(@NonNull String tarih) {
+        this.tarih = tarih;
     }
 }

@@ -26,8 +26,8 @@ public class NotlarDaoRepository { // bütün view modellerde tek bağımlılık
         this.notDaoI = notDaoI;
     }
 
-    public void kaydet (String baslik,String icerik){ // notDao da Insert işlemi oluşturduk ve burada kaydette uyguladık.
-        Notlar yeniNot = new Notlar(0,baslik,icerik);
+    public void kaydet (String baslik,String icerik, String tarih){ // notDao da Insert işlemi oluşturduk ve burada kaydette uyguladık.
+        Notlar yeniNot = new Notlar(0,baslik,icerik,tarih);
         notDaoI.kaydet(yeniNot).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new CompletableObserver() { // buralara bişey yazmayacağız. bizim için kaydetme fonk. çalışması yeterli!
@@ -42,8 +42,8 @@ public class NotlarDaoRepository { // bütün view modellerde tek bağımlılık
                 });
     }
 
-    public void guncelle(int id,String baslik,String icerik){
-        Notlar guncelNot = new Notlar(id,baslik,icerik);
+    public void guncelle(int id,String baslik,String icerik, String tarih){
+        Notlar guncelNot = new Notlar(id,baslik,icerik,tarih);
         notDaoI.guncelle(guncelNot).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new CompletableObserver() { // buralara bişey yazmayacağız. bizim için kaydetme fonk. çalışması yeterli!
@@ -59,7 +59,7 @@ public class NotlarDaoRepository { // bütün view modellerde tek bağımlılık
     }
 
     public void sil(int not_id){
-        Notlar silNot = new Notlar(not_id,"","");
+        Notlar silNot = new Notlar(not_id,"","","");
         notDaoI.sil(silNot).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new CompletableObserver() { // buralara bişey yazmayacağız. bizim için kaydetme fonk. çalışması yeterli!
