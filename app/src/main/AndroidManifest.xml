@@ -5,21 +5,24 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"></uses-permission>
     <uses-permission android:name="com.google.android.gms.permission.AD_ID"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
 
     <application
         android:name=".di.HiltApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/app_icon1"
+        android:icon="@mipmap/new_app_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/app_icon1"
+        android:roundIcon="@mipmap/new_app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NotApp"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

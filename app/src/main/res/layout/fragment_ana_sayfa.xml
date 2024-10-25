@@ -48,12 +48,12 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
-        android:layout_height="593dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="539dp"
         app:layout_constraintBottom_toTopOf="@+id/noteAdd"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adView" />
+        app:layout_constraintTop_toBottomOf="@+id/adText" />
 
     <ImageView
         android:id="@+id/settings"
@@ -70,12 +70,27 @@
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         app:adSize="BANNER"
         app:adUnitId="ca-app-pub-3475820063501035/4539293381"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"></com.google.android.gms.ads.AdView>
+
+    <TextView
+        android:id="@+id/adText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/andika_new_basic"
+        android:text="Merhaba, Yunus Emre"
+        android:textAlignment="viewStart"
+        android:textColor="@color/newCard"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

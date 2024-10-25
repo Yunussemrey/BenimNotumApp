@@ -33,8 +33,8 @@ public class AppModule {
     @Provides
     @Singleton
     public NotlarDao providerNotlarDao(@ApplicationContext Context context){
-        Veritabani vt = Room.databaseBuilder(context, Veritabani.class,"not_1.sqlite") // veritabanı dosyamı alıp telefona kopyalaması için
-                .createFromAsset("not_1.sqlite").build(); // bu kodla kopyalıyor. hem kopyalıyor hem erişiyor!!
+        Veritabani vt = Room.databaseBuilder(context, Veritabani.class,"not_2.sqlite") // veritabanı dosyamı alıp telefona kopyalaması için
+                .createFromAsset("not_2.sqlite").build(); // bu kodla kopyalıyor. hem kopyalıyor hem erişiyor!!
 
         return vt.getNotlarDao() ;
 

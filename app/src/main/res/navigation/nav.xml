@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
-    app:startDestination="@id/anaSayfaFragment">
+    app:startDestination="@id/ilkFragment">
 
     <fragment
         android:id="@+id/anaSayfaFragment"
@@ -50,11 +50,11 @@
         android:label="fragment_ayarlar"
         tools:layout="@layout/fragment_ayarlar" >
         <action
-            android:id="@+id/hakkimdaGecis"
-            app:destination="@id/hakkimdaFragment" />
-        <action
             android:id="@+id/yaziRenkGecis"
             app:destination="@id/yaziRenkFragment" />
+        <action
+            android:id="@+id/ayarToGiris"
+            app:destination="@id/girisFragment" />
     </fragment>
     <fragment
         android:id="@+id/notOkumaFragment"
@@ -72,11 +72,6 @@
             app:destination="@id/anaSayfaFragment" />
     </fragment>
     <fragment
-        android:id="@+id/hakkimdaFragment"
-        android:name="com.yunusemre.notapp.ui.fragment.HakkimdaFragment"
-        android:label="fragment_hakkimda"
-        tools:layout="@layout/fragment_hakkimda" />
-    <fragment
         android:id="@+id/yaziRenkFragment"
         android:name="com.yunusemre.notapp.ui.fragment.YaziRenkFragment"
         android:label="fragment_yazi_renk"
@@ -84,5 +79,23 @@
         <action
             android:id="@+id/action_yaziRenkFragment_self"
             app:destination="@id/yaziRenkFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ilkFragment"
+        android:name="com.yunusemre.notapp.ui.fragment.IlkFragment"
+        android:label="fragment_ilk"
+        tools:layout="@layout/fragment_ilk" >
+        <action
+            android:id="@+id/ilkToAnasayfa"
+            app:destination="@id/girisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/girisFragment"
+        android:name="com.yunusemre.notapp.ui.fragment.GirisFragment"
+        android:label="fragment_giris"
+        tools:layout="@layout/fragment_giris" >
+        <action
+            android:id="@+id/girisToAnasayfa"
+            app:destination="@id/anaSayfaFragment" />
     </fragment>
 </navigation>

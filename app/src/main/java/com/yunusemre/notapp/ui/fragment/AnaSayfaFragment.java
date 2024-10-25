@@ -2,9 +2,14 @@ package com.yunusemre.notapp.ui.fragment;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -24,6 +29,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,6 +62,7 @@ public class AnaSayfaFragment extends Fragment {
         private AnaSayfaViewModel viewModel;
         public MutableLiveData<Notlar> notlarList;
         SharedPreferences sp;
+        SharedPreferences preferences;
         SharedPreferences sp2;
          private AdView banner;
          private InterstitialAd mInterstitialAd;
@@ -67,6 +74,7 @@ public class AnaSayfaFragment extends Fragment {
             binding = FragmentAnaSayfaBinding.inflate(inflater,container,false);
 
             sp = getActivity().getSharedPreferences("Tarih", Context.MODE_PRIVATE);
+            preferences = getActivity().getSharedPreferences("Giris",Context.MODE_PRIVATE);
 
             //izin kontrol
             registerLauncher();
@@ -94,6 +102,9 @@ public class AnaSayfaFragment extends Fragment {
                     }
 
                 });
+
+                String gelenAd = preferences.getString("kayitAd","");
+                binding.adText.setText("Merhaba, "+gelenAd.toUpperCase());
 
 
 
@@ -176,6 +187,7 @@ public class AnaSayfaFragment extends Fragment {
 
         viewModel.notlarListe.observe(getViewLifecycleOwner(),notListesi -> {
             NotlarAdapter adapter = new NotlarAdapter(requireContext(),notListesi,viewModel,sp,sp2);
+            Log.e("hataLog","Adapter bağlantı");
             binding.rv.setAdapter(adapter);
 
         });
@@ -231,7 +243,6 @@ public class AnaSayfaFragment extends Fragment {
         super.onResume();
 
         viewModel.notlarYukle();
-
 
 
 

@@ -27,21 +27,6 @@
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/hakkimda"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/border"
-                android:fontFamily="@font/acme"
-                android:layerType="none"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:text="Hakkımda"
-                android:textAlignment="center"
-                android:textSize="24sp">
-
-            </TextView>
-
-            <TextView
                 android:id="@+id/fontColor"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -56,6 +41,7 @@
                 android:textSize="24sp">
 
             </TextView>
+
 
 
         </LinearLayout>
@@ -88,19 +74,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <TextView
-        android:id="@+id/version"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="version name"
-        android:textColor="#5E5959"
-        app:layout_constraintEnd_toEndOf="@+id/ayarlarTarih"
-        app:layout_constraintStart_toStartOf="@+id/ayarlarTarih"
-        app:layout_constraintTop_toBottomOf="@+id/ayarlarTarih">
-
-    </TextView>
 
     <TextView
         android:id="@+id/ayarlarTarih"

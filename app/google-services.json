@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "272274569784",
+    "project_id": "benimnotum-6df13",
+    "storage_bucket": "benimnotum-6df13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272274569784:android:bed77422ba795220a004cd",
+        "android_client_info": {
+          "package_name": "com.yunusemre.notapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAEeZAqX6zwIHQUV8Y4_lr-PMfQAOCiuw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

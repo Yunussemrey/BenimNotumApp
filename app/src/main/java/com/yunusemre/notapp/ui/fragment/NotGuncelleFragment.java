@@ -58,7 +58,7 @@ public class NotGuncelleFragment extends Fragment {
             binding.editTextBaslikGuncel.setText(gelenNot.getNot_baslik());
             binding.editTextNotGuncel.setText(gelenNot.getNot_icerik());
 
-        String tarih = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        String tarih = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault()).format(new Date());
         binding.tarihText.setText(tarih);
         binding.buttonGuncelle.setOnClickListener(v -> {
              not_baslik = binding.editTextBaslikGuncel.getText().toString();

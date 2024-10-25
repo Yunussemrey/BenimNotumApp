@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -22,6 +23,8 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.yunusemre.notapp.R;
 import com.yunusemre.notapp.databinding.FragmentAyarlarBinding;
 
@@ -36,7 +39,7 @@ import io.reactivex.android.BuildConfig;
 public class AyarlarFragment extends Fragment {
     private FragmentAyarlarBinding binding;
     private AdView banner5;
-
+    private FirebaseAuth auth;
 
 
     @Override
@@ -44,20 +47,20 @@ public class AyarlarFragment extends Fragment {
                              Bundle savedInstanceState) {
             binding = FragmentAyarlarBinding.inflate(inflater, container, false);
 
-            binding.hakkimda.setOnClickListener(v -> {
-                Navigation.findNavController(v).navigate(R.id.hakkimdaGecis);
-            });
+            auth = FirebaseAuth.getInstance();
 
            binding.fontColor.setOnClickListener(v -> {
                Navigation.findNavController(v).navigate(R.id.yaziRenkGecis);
            });
 
+
+
         String date = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
         binding.ayarlarTarih.setText(date); //günün tarihi
 
-        int versionCode = BuildConfig.VERSION_CODE;
 
-        binding.version.setText("Version "+versionCode);
+
+
 
 
         MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {

@@ -75,7 +75,7 @@ public class NotKayitFragment extends Fragment {
 
 
 
-        String tarih = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        String tarih = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault()).format(new Date());
         binding.textTarih.setText(tarih);
 
             binding.buttonSave.setOnClickListener(v -> {
